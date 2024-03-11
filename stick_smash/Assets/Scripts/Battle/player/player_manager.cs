@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class player_manager : MonoBehaviour
 {
+
+    public Rigidbody2D rb;
+    public float move_direction;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +18,13 @@ public class player_manager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("up") || Input.GetKeyDown("down") || Input.GetKeyDown("left") || Input.GetKeyDown("right")) {
-            Debug.Log("j'aime les cuisses de Rem");   
+            
+            rb.velocity = new Vector2(move_direction * 450 * Time.fixedDeltaTime, rb.velocity.y);
         }
 
         if (Input.GetKeyDown("w") || Input.GetKeyDown("s") || Input.GetKeyDown("a") || Input.GetKeyDown("d")) {
-            Debug.Log("Rem > Emilia");   
+
+            rb.velocity = new Vector2(move_direction * 450 * Time.fixedDeltaTime, rb.velocity.x);
         }
     }
 }
