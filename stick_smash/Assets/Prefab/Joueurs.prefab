@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7211064373397676141}
   - component: {fileID: 8243601721139991087}
   - component: {fileID: 3494721653393908793}
-  - component: {fileID: 4072456766498463887}
+  - component: {fileID: 520186060334504996}
   m_Layer: 0
   m_Name: Joueur
   m_TagString: Untagged
@@ -192,7 +192,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4072456766498463887
+--- !u!114 &520186060334504996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,11 +201,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5665410097289060817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913659b34cb9e934ea2ff58469ad59da, type: 3}
+  m_Script: {fileID: 11500000, guid: 148ee01b5ba9e7e4e89a23e9fa6f6257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8243601721139991087}
-  move_direction: 1
+  cube_1: {fileID: 0}
+  cube_2: {fileID: 0}
+  move_direction: 20
 --- !u!1 &7081442154892122077
 GameObject:
   m_ObjectHideFlags: 0
