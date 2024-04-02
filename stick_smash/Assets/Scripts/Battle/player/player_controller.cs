@@ -9,6 +9,7 @@ public class player_controller : MonoBehaviour
     public float move_direction;
     int vitesse;
     int force_saut;
+    int force_deplacement;
     bool is_on_ground;
     direction direction_looking;
 
@@ -18,7 +19,8 @@ public class player_controller : MonoBehaviour
     {
         vitesse = 200;
         force_saut = 8;
-        move_direction = 1;
+        force_deplacement = 5;
+        move_direction = 2;
         is_on_ground = false;
         direction_looking = direction.droite;
     }
@@ -31,17 +33,14 @@ public class player_controller : MonoBehaviour
             
             jump();
         }
-
-        else {
-            Debug.Log("is_on_ground est false");
-        }
     }
 
 
     // Permet de sauter
     public void jump() {
 
-        rb.velocity = Vector2.up * force_saut;
+        //rb.velocity = Vector2.up * force_saut;
+        rb.velocity = new Vector2(rb.velocity.x, force_saut);
     }
 
 
@@ -53,12 +52,7 @@ public class player_controller : MonoBehaviour
             case direction.gauche:
                 
                 if (direction_looking == direction.droite) {
-                    Debug.Log("faut changer de rota");
                     transform.rotation = Quaternion.Euler(0,-180,0);
-                }
-
-                else {
-                    Debug.Log("c'est good");
                 }
 
             break;
@@ -66,12 +60,7 @@ public class player_controller : MonoBehaviour
             case direction.droite:
             
                 if (direction_looking == direction.gauche) {
-                    Debug.Log("faut changer de rota");
                     transform.rotation = Quaternion.Euler(0,0,0);
-                }
-
-                else {
-                    Debug.Log("c'est good");
                 }
 
             break;
@@ -82,16 +71,26 @@ public class player_controller : MonoBehaviour
     // Permet de donner une impulsion vers la droite au Rigid Body du joueur
     public void move_right() {
 
-        rb.velocity = new Vector2(move_direction * vitesse * Time.fixedDeltaTime, rb.velocity.y);
-        direction_looking = direction.droite;
+        if (is_on_ground == true) {
+        
+            //rb.velocity = new Vector2(move_direction * vitesse * Time.fixedDeltaTime, rb.velocity.x);
+            rb.velocity = Vector2.right * force_deplacement;
+
+            direction_looking = direction.droite;
+        }
     }
 
 
     // Permet de donner une impulsion vers la gauche au Rigid Body du joueur
     public void move_left() {
 
-        rb.velocity = new Vector2(move_direction * vitesse * Time.fixedDeltaTime, rb.velocity.x);
-        direction_looking = direction.gauche;
+        if (is_on_ground == true) {
+        
+            //rb.velocity = new Vector2(move_direction * vitesse * Time.fixedDeltaTime, rb.velocity.x);
+            rb.velocity = Vector2.left * force_deplacement;
+
+            direction_looking = direction.gauche;
+        }
     }
 
 

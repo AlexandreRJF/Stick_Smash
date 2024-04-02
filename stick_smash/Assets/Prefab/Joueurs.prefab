@@ -136,7 +136,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 635d9629d6133884299f4ea78e6f3800, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -205,8 +205,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8243601721139991087}
-  cube_1: {fileID: 0}
-  cube_2: {fileID: 0}
   move_direction: 20
 --- !u!1 &7081442154892122077
 GameObject:

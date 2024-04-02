@@ -56,7 +56,7 @@ public class player_manager : MonoBehaviour
             J2.move_left();
         }
 
-        if (Input.GetKeyDown("space")) {
+        if (Input.GetKeyDown("[0]")) {
 
             J2.verif_jump();
         }
