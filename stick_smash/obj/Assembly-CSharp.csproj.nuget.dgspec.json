@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\a.frinchaboy\\Documents\\GitHub\\Stick_Smash\\stick_smash\\Assembly-CSharp.csproj": {}
+    "c:\\Users\\a.frinchaboy\\Documents\\GitHub\\Stick_Smash\\stick_smash\\Assembly-CSharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\a.frinchaboy\\Documents\\GitHub\\Stick_Smash\\stick_smash\\Assembly-CSharp.csproj": {
+    "c:\\Users\\a.frinchaboy\\Documents\\GitHub\\Stick_Smash\\stick_smash\\Assembly-CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\a.frinchaboy\\Documents\\GitHub\\Stick_Smash\\stick_smash\\Assembly-CSharp.csproj",
+        "projectUniqueName": "c:\\Users\\a.frinchaboy\\Documents\\GitHub\\Stick_Smash\\stick_smash\\Assembly-CSharp.csproj",
         "projectName": "Assembly-CSharp",
-        "projectPath": "C:\\Users\\a.frinchaboy\\Documents\\GitHub\\Stick_Smash\\stick_smash\\Assembly-CSharp.csproj",
+        "projectPath": "c:\\Users\\a.frinchaboy\\Documents\\GitHub\\Stick_Smash\\stick_smash\\Assembly-CSharp.csproj",
         "packagesPath": "C:\\Users\\a.frinchaboy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\a.frinchaboy\\Documents\\GitHub\\Stick_Smash\\stick_smash\\obj\\",
+        "outputPath": "c:\\Users\\a.frinchaboy\\Documents\\GitHub\\Stick_Smash\\stick_smash\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\a.frinchaboy\\AppData\\Roaming\\NuGet\\NuGet.Config"

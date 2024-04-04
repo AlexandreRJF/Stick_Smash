@@ -26,17 +26,17 @@ public class player_manager : MonoBehaviour
     // Permet de vérifier si le J1 à appuyer sur des touches
     void verif_input_j1() {
 
-        if (Input.GetKeyDown("d")) {
+        if (Input.GetKey("d")) {
             J1.verif_rotation(direction.droite);
             J1.move_right();
         }
 
-        if (Input.GetKeyDown("a")) {            
+        else if (Input.GetKey("a")) {            
             J1.verif_rotation(direction.gauche);
             J1.move_left();
         }
 
-        if (Input.GetKeyDown("space")) {
+        if (Input.GetKey("space")) {
 
             J1.verif_jump();
         }
@@ -46,17 +46,17 @@ public class player_manager : MonoBehaviour
     // Permet de vérifier si le J2 à appuyer sur des touches
     void verif_input_j2() {
 
-        if (Input.GetKeyDown("right")) {
+        if (Input.GetKey("right")) {
             J2.verif_rotation(direction.droite);
             J2.move_right();
         }
 
-        if (Input.GetKeyDown("left")) {            
+        else if (Input.GetKey("left")) {            
             J2.verif_rotation(direction.gauche);
             J2.move_left();
         }
 
-        if (Input.GetKeyDown("[0]")) {
+        if (Input.GetKey("[0]")) {
 
             J2.verif_jump();
         }
