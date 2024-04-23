@@ -71,26 +71,26 @@ public class player_controller : MonoBehaviour
     // Permet de donner une impulsion vers la droite au Rigid Body du joueur
     public void move_right() {
 
-        if (is_on_ground == true) {
+        //if (is_on_ground == true) {
         
-            //rb.velocity = new Vector2(move_direction * vitesse * Time.fixedDeltaTime, rb.velocity.x);
             rb.velocity = Vector2.right * force_deplacement;
+            //rb.velocity = new Vector2(force_deplacement,transform.position.y);
 
             direction_looking = direction.droite;
-        }
+        //}
     }
 
 
     // Permet de donner une impulsion vers la gauche au Rigid Body du joueur
     public void move_left() {
 
-        if (is_on_ground == true) {
+        //if (is_on_ground == true) {
         
-            //rb.velocity = new Vector2(move_direction * vitesse * Time.fixedDeltaTime, rb.velocity.x);
+            //rb.velocity = new Vector2(-force_deplacement,transform.position.y);
             rb.velocity = Vector2.left * force_deplacement;
 
             direction_looking = direction.gauche;
-        }
+        //}
     }
 
 
