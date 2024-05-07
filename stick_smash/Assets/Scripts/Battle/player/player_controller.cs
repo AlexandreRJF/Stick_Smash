@@ -12,6 +12,9 @@ public class player_controller : MonoBehaviour
     int force_deplacement;
     bool is_on_ground;
     direction direction_looking;
+    public SpriteRenderer sprite_renderer;
+    public fist_manager Fist_Manager;
+    public game_manager Game_Manager;
 
 
     // Start is called before the first frame update
@@ -69,28 +72,10 @@ public class player_controller : MonoBehaviour
 
 
     // Permet de donner une impulsion vers la droite au Rigid Body du joueur
-    public void move_right() {
+    public void move_player(direction direction_recu) {
 
-        //if (is_on_ground == true) {
-        
-            rb.velocity = Vector2.right * force_deplacement;
-            //rb.velocity = new Vector2(force_deplacement,transform.position.y);
-
-            direction_looking = direction.droite;
-        //}
-    }
-
-
-    // Permet de donner une impulsion vers la gauche au Rigid Body du joueur
-    public void move_left() {
-
-        //if (is_on_ground == true) {
-        
-            //rb.velocity = new Vector2(-force_deplacement,transform.position.y);
-            rb.velocity = Vector2.left * force_deplacement;
-
-            direction_looking = direction.gauche;
-        //}
+        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * force_deplacement, rb.velocity.y);
+        direction_looking = direction_recu;
     }
 
 
@@ -105,5 +90,21 @@ public class player_controller : MonoBehaviour
     void OnCollisionExit2D(Collision2D hit_box) {
         
         is_on_ground = false;
+    }
+
+
+    // Permet de lancer l'attaque
+    public void player_attack() {
+
+        Fist_Manager.attaque();
+    }
+
+
+    // Permet d'executer du code quand une attaque est subit
+    public void attaque_subit() {
+
+        Debug.Log("AAAAAAHHHHHHHHHHHHH-");
+        Game_Manager.call_main_victoire();
+        Destroy(gameObject);
     }
 }

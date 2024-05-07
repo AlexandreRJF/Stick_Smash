@@ -28,17 +28,22 @@ public class player_manager : MonoBehaviour
 
         if (Input.GetKey("d")) {
             J1.verif_rotation(direction.droite);
-            J1.move_right();
+            J1.move_player(direction.droite);
         }
 
         else if (Input.GetKey("a")) {            
             J1.verif_rotation(direction.gauche);
-            J1.move_left();
+            J1.move_player(direction.gauche);
         }
 
         if (Input.GetKey("space") || Input.GetKey("w")) {
 
             J1.verif_jump();
+        }
+
+        if (Input.GetKey("s")) {
+
+            J1.player_attack();
         }
     }
 
@@ -48,17 +53,22 @@ public class player_manager : MonoBehaviour
 
         if (Input.GetKey("right")) {
             J2.verif_rotation(direction.droite);
-            J2.move_right();
+            J2.move_player(direction.droite);
         }
 
         else if (Input.GetKey("left")) {            
             J2.verif_rotation(direction.gauche);
-            J2.move_left();
+            J2.move_player(direction.gauche);
         }
 
         if (Input.GetKey("[0]") || Input.GetKey("up")) {
 
             J2.verif_jump();
+        }
+
+        if (Input.GetKey("down")) {
+
+            J2.player_attack();
         }
     }
 }
