@@ -5,16 +5,26 @@ using UnityEngine;
 public class player_controller : MonoBehaviour
 {
 
-    public Rigidbody2D rb;
-    public float move_direction;
+    // Int
     int vitesse;
-    int force_saut;
+    public int force_saut;
     int force_deplacement;
-    bool is_on_ground;
+
+    // Float
+    public float move_direction;
+    
+    // Bool
     direction direction_looking;
+    
+    // Componenets
     public SpriteRenderer sprite_renderer;
-    public fist_manager Fist_Manager;
+    public Rigidbody2D rb;
+
+    // Scripts
     public game_manager Game_Manager;
+    public fist_manager Fist_Manager;
+    public pv_manager Pv_Manager;
+    public jump_manager Jump_Manager;
 
 
     // Start is called before the first frame update
@@ -24,26 +34,13 @@ public class player_controller : MonoBehaviour
         force_saut = 8;
         force_deplacement = 5;
         move_direction = 2;
-        is_on_ground = false;
         direction_looking = direction.droite;
     }
 
 
-    // Permet de vérifier que le joueur peut sauter
-    public void verif_jump() {
-
-        if (is_on_ground == true) {
-            
-            jump();
-        }
-    }
-
-
-    // Permet de sauter
-    public void jump() {
-
-        //rb.velocity = Vector2.up * force_saut;
-        rb.velocity = new Vector2(rb.velocity.x, force_saut);
+    // Permet de lancer le saut
+    public void player_jump() {
+        Jump_Manager.verif_jump();
     }
 
 
@@ -71,25 +68,20 @@ public class player_controller : MonoBehaviour
     }    
 
 
-    // Permet de donner une impulsion vers la droite au Rigid Body du joueur
-    public void move_player(direction direction_recu) {
+    // Permet de vérifier que les conditions pour bouger sont réunis
+    public void verif_move_player(direction direction_looking) {
+
+        if (Fist_Manager.attack_on == false) {
+            move_player(direction_looking);
+        }
+    }
+
+
+    // Permet de faire bouger le joueur selon la direction qu'il input
+    void move_player(direction direction_recu) {
 
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * force_deplacement, rb.velocity.y);
         direction_looking = direction_recu;
-    }
-
-
-    // Permet de détecter quand le perso arrive au sol
-    void OnCollisionEnter2D(Collision2D hit_box) {
-        
-        is_on_ground = true;
-    }
-
-
-    // Permet de détecter quand le perso quitte le sol
-    void OnCollisionExit2D(Collision2D hit_box) {
-        
-        is_on_ground = false;
     }
 
 
@@ -103,8 +95,10 @@ public class player_controller : MonoBehaviour
     // Permet d'executer du code quand une attaque est subit
     public void attaque_subit() {
 
-        Debug.Log("AAAAAAHHHHHHHHHHHHH-");
-        Game_Manager.call_main_victoire();
-        Destroy(gameObject);
+        if (Pv_Manager.calcule_degats() == true) {
+        
+            Game_Manager.call_main_victoire();
+            Destroy(gameObject);
+        }
     }
 }

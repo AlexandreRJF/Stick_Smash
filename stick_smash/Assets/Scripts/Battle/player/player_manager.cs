@@ -28,17 +28,17 @@ public class player_manager : MonoBehaviour
 
         if (Input.GetKey("d")) {
             J1.verif_rotation(direction.droite);
-            J1.move_player(direction.droite);
+            J1.verif_move_player(direction.droite);
         }
 
         else if (Input.GetKey("a")) {            
             J1.verif_rotation(direction.gauche);
-            J1.move_player(direction.gauche);
+            J1.verif_move_player(direction.gauche);
         }
 
         if (Input.GetKey("space") || Input.GetKey("w")) {
 
-            J1.verif_jump();
+            J1.player_jump();
         }
 
         if (Input.GetKey("s")) {
@@ -53,17 +53,17 @@ public class player_manager : MonoBehaviour
 
         if (Input.GetKey("right")) {
             J2.verif_rotation(direction.droite);
-            J2.move_player(direction.droite);
+            J2.verif_move_player(direction.droite);
         }
 
         else if (Input.GetKey("left")) {            
             J2.verif_rotation(direction.gauche);
-            J2.move_player(direction.gauche);
+            J2.verif_move_player(direction.gauche);
         }
 
         if (Input.GetKey("[0]") || Input.GetKey("up")) {
 
-            J2.verif_jump();
+            J2.player_jump();
         }
 
         if (Input.GetKey("down")) {

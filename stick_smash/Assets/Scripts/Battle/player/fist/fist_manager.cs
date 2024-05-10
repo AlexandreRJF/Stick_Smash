@@ -5,20 +5,23 @@ using UnityEngine;
 public class fist_manager : MonoBehaviour
 {
 
-    public GameObject go_poing;
-    bool attack_on;
+    public GameObject go_poing_sorti;
+    public GameObject go_poing_rentre;
+    public bool attack_on;
+    bool end_lag;
 
     // Start is called before the first frame update
     void Start() {
         
-        go_poing.SetActive(false);
+        go_poing_rentre.SetActive(false);
+        go_poing_sorti.SetActive(false);
     }
 
 
     // Permet de lancer une attaque
     public void attaque() {
 
-        if (attack_on == false) {
+        if (end_lag == false) {
             StartCoroutine(affichage_poing());
         }
     }
@@ -28,14 +31,17 @@ public class fist_manager : MonoBehaviour
     IEnumerator affichage_poing() {
 
         attack_on = true;
-        go_poing.SetActive(true);
+        end_lag = true;
+        go_poing_rentre.SetActive(true);
 
         yield return new WaitForSeconds(1.0f);
 
-        go_poing.SetActive(false);
+        go_poing_rentre.SetActive(false);
+        go_poing_sorti.SetActive(true);
+        attack_on = false;
 
         yield return new WaitForSeconds(0.5f);
-
-        attack_on = false;
+        go_poing_sorti.SetActive(false);
+        end_lag = false;
     }
 }

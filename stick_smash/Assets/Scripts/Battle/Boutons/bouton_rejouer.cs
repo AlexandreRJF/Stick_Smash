@@ -7,11 +7,19 @@ public class bouton_rejouer : MonoBehaviour
 {
 
     [SerializeField] private GameObject go_bouton_rejouer;
+    [SerializeField] private game_manager Game_Manager;
 
     // Start is called before the first frame update
     void Start()
     {
         gestion_bouton(false);
+    }
+
+
+    // Update
+    void Update() {
+
+        input_rejouer();
     }
 
 
@@ -29,11 +37,13 @@ public class bouton_rejouer : MonoBehaviour
     }
 
 
-
     // Permet d'executer les méthodes nécessaires à fermer le jeu
     public void gestion_rejouer() {
 
-        nouvelle_partie();
+        if (Game_Manager.partie_fini == true) {
+        
+            nouvelle_partie();
+        }
     }
 
 
@@ -41,5 +51,15 @@ public class bouton_rejouer : MonoBehaviour
     private void nouvelle_partie() {
 
         SceneManager.LoadScene("Battle");
+    }
+
+
+    // Permet de relancer la parti quand le joueur appuie sur une touche
+    void input_rejouer() {
+    
+        if (Input.GetKeyDown("return")) {
+
+            gestion_rejouer();
+        }
     }
 }
