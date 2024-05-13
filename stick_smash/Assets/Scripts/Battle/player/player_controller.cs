@@ -15,6 +15,7 @@ public class player_controller : MonoBehaviour
     
     // Bool
     direction direction_looking;
+    public bool i_frames;
     
     // Componenets
     public SpriteRenderer sprite_renderer;
@@ -25,6 +26,7 @@ public class player_controller : MonoBehaviour
     public fist_manager Fist_Manager;
     public pv_manager Pv_Manager;
     public jump_manager Jump_Manager;
+    public mana_i_frames Mana_i_Frames;
 
 
     // Start is called before the first frame update
@@ -35,6 +37,7 @@ public class player_controller : MonoBehaviour
         force_deplacement = 5;
         move_direction = 2;
         direction_looking = direction.droite;
+        i_frames = false;
     }
 
 
@@ -92,13 +95,34 @@ public class player_controller : MonoBehaviour
     }
 
 
-    // Permet d'executer du code quand une attaque est subit
+    // Permet de savoir que le joueur est attaquer
     public void attaque_subit() {
 
-        if (Pv_Manager.calcule_degats() == true) {
-        
-            Game_Manager.call_main_victoire();
-            Destroy(gameObject);
+        if (i_frames == false) {
+
+            degats_subit();
+            Mana_i_Frames.main_i_frames();
         }
+
+    }
+
+
+    // Permet d'infliger des dégâts au joueur
+    void degats_subit() {
+
+        Pv_Manager.main_reduction_pv();
+
+        if (Pv_Manager.verif_ko() == true) {
+            
+            mort();
+        }
+    }
+
+
+    // Permet de tuer le personnage
+    void mort() {
+
+        Game_Manager.call_main_victoire();
+        Destroy(gameObject);
     }
 }

@@ -1584,6 +1584,18 @@ PrefabInstance:
       propertyPath: Game_Manager
       value: 
       objectReference: {fileID: 1239639565}
+    - target: {fileID: 1801472343637915159, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1801472343637915159, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1801472343637915159, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2436939237260688138, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1644,6 +1656,18 @@ PrefabInstance:
       propertyPath: cube_2
       value: 
       objectReference: {fileID: 2054019218}
+    - target: {fileID: 4461779743271219919, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.40528303
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461779743271219919, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.36470592
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461779743271219919, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4788588970888744407, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
       propertyPath: m_Name
       value: J2

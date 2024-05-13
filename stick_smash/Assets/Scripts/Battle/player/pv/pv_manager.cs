@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class pv_manager : MonoBehaviour
@@ -13,7 +14,7 @@ public class pv_manager : MonoBehaviour
     public List<GameObject> liste_go_coeur = new List<GameObject>();
 
     // Bool
-    public bool i_frames;
+
 
     // Scripts
     [SerializeField] player_controller Player_Controller;
@@ -23,7 +24,6 @@ public class pv_manager : MonoBehaviour
 
         pv_max = 3;
         pv_actuelle = pv_max;
-        i_frames = false;
 
         affichage_coeur();
     }
@@ -50,19 +50,31 @@ public class pv_manager : MonoBehaviour
     }
 
 
-    // Permet de calculer les dégâts subits
-    public bool calcule_degats() {
-    
-        if ((pv_actuelle - 1) > 0) {
-        
-            pv_actuelle -= 1;
-            affichage_coeur();
+    // Permet de call les fonctions nécessaire à perdre des PV
+    public void main_reduction_pv() {
 
-            return false;
+        reduction_pv();
+        affichage_coeur();
+    }
+
+
+    // Permet de calculer les dégâts subits
+    void reduction_pv() {
+
+        pv_actuelle -= 1;
+    }
+
+
+    // Permet de savoir si le joueur est K.O
+    public bool verif_ko() {
+
+        if (pv_actuelle <= 0) {
+
+            return true;
         }
 
         else {
-            return true;
+            return false;
         }
     }
 }
