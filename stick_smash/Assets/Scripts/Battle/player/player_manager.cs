@@ -36,7 +36,7 @@ public class player_manager : MonoBehaviour
             J1.verif_move_player(direction.gauche);
         }
 
-        if (Input.GetKey("space") || Input.GetKey("w")) {
+        if (Input.GetKeyDown("space") || Input.GetKeyDown("w")) {
 
             J1.player_jump();
         }
