@@ -61,9 +61,7 @@ public class jump_manager : MonoBehaviour
     // Permet de réduire les sauts restants au joueur
     void reduction_nombre_sauts() {
 
-        Debug.Log(nombre_sauts);
         nombre_sauts -= 1;
-        Debug.Log(nombre_sauts);
     }
 
 

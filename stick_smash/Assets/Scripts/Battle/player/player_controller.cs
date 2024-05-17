@@ -12,6 +12,7 @@ public class player_controller : MonoBehaviour
 
     // Float
     public float move_direction;
+    public float horizontal_axis;
     
     // Bool
     direction direction_looking;
@@ -68,7 +69,7 @@ public class player_controller : MonoBehaviour
 
             break;
         }
-    }    
+    }
 
 
     // Permet de vérifier que les conditions pour bouger sont réunis
@@ -83,7 +84,7 @@ public class player_controller : MonoBehaviour
     // Permet de faire bouger le joueur selon la direction qu'il input
     void move_player(direction direction_recu) {
 
-        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * force_deplacement, rb.velocity.y);
+        rb.velocity = new Vector2(horizontal_axis * force_deplacement, rb.velocity.y);
         direction_looking = direction_recu;
     }
 
