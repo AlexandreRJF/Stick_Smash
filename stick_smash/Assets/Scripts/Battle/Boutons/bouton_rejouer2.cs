@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class bouton_rejouer : MonoBehaviour
+public class bouton_rejouer2 : MonoBehaviour
 {
 
     [SerializeField] private GameObject go_bouton_rejouer;
@@ -51,7 +51,7 @@ public class bouton_rejouer : MonoBehaviour
     // Permet de quitter la partie
     private void nouvelle_partie() {
 
-        SceneManager.LoadScene("Battle 1");
+        SceneManager.LoadScene("Battle 2");
     }
 
 
