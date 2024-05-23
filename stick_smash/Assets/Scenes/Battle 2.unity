@@ -246,8 +246,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1149731254}
-        m_TargetAssemblyTypeName: bouton_rejouer, Assembly-CSharp
+      - m_Target: {fileID: 1149731255}
+        m_TargetAssemblyTypeName: bouton_rejouer2, Assembly-CSharp
         m_MethodName: gestion_rejouer
         m_Mode: 1
         m_Arguments:
@@ -906,7 +906,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0ff91215489ab704ea65b334760d011d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 42748cf0ee4548f428482c6043058519, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1783,12 +1783,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2054019218}
     - target: {fileID: 4461779743271219919, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2126132550, guid: d40ca6970859f4b4e99708d1db073251, type: 3}
+    - target: {fileID: 4461779743271219919, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
       propertyPath: m_Color.b
-      value: 0.40528303
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4461779743271219919, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
       propertyPath: m_Color.g
-      value: 0.36470592
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4461779743271219919, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
       propertyPath: m_Color.r
@@ -2205,6 +2209,7 @@ GameObject:
   - component: {fileID: 1149731254}
   - component: {fileID: 1149731253}
   - component: {fileID: 1149731251}
+  - component: {fileID: 1149731255}
   m_Layer: 0
   m_Name: Stock Boutons
   m_TagString: Untagged
@@ -2263,6 +2268,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51ad04a78f7d7394fa721e678d359bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go_bouton_rejouer: {fileID: 103681407}
+  Game_Manager: {fileID: 1239639565}
+  "nom_sc\xE8ne": 
+--- !u!114 &1149731255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149731250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32583c9828447e41bf9182bcbdebef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   go_bouton_rejouer: {fileID: 103681407}
@@ -2543,8 +2563,8 @@ Transform:
   m_GameObject: {fileID: 1255184543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.39, y: 3.67, z: 0}
-  m_LocalScale: {x: 6.169342, y: 0.5792688, z: 1}
+  m_LocalPosition: {x: 6.8462, y: 3.67, z: 0}
+  m_LocalScale: {x: 5.2567487, y: 0.5792688, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 801357667}
@@ -3773,8 +3793,8 @@ Transform:
   m_GameObject: {fileID: 1944023785}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.41, y: -0.8146, z: 0}
-  m_LocalScale: {x: 7.7116776, y: 0.5792688, z: 1}
+  m_LocalPosition: {x: 0.41, y: 1.0046, z: 0}
+  m_LocalScale: {x: 1.9078143, y: 0.5792688, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 801357667}
@@ -3851,8 +3871,8 @@ Transform:
   m_GameObject: {fileID: 1984700042}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.8, y: 3.67, z: 0}
-  m_LocalScale: {x: 6.169342, y: 0.5792688, z: 1}
+  m_LocalPosition: {x: -6.2334, y: 3.67, z: 0}
+  m_LocalScale: {x: 5.3025494, y: 0.5792688, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 801357667}
@@ -4370,16 +4390,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4461779743271219919, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 995863441, guid: c60c7d205cf32664583555f8663c459f, type: 3}
+    - target: {fileID: 4461779743271219919, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4461779743271219919, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
       propertyPath: m_Color.g
-      value: 0.55384624
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4461779743271219919, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
       propertyPath: m_Color.r
-      value: 0.3160377
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4788588970888744407, guid: 589004ac3d23c544a8f853f61038529f, type: 3}
       propertyPath: m_Name
