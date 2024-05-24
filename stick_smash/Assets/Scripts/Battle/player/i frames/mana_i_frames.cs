@@ -62,6 +62,19 @@ public class mana_i_frames : MonoBehaviour
     // Permet d'activer l'animation d'I frames
     void activation_anim_i_frames() {
 
-        animator_i_frames.Play("anim_i_frames", 0, 0);
+        string anim_selectionner = "";
+
+        switch (Player_Controller.Pv_Manager.pv_actuelle) {
+        
+            case 2:
+                anim_selectionner = "anim_i_frames_green";
+            break;
+
+            case 1:
+                anim_selectionner = "anim_i_frames_red";
+            break;
+        }
+
+        animator_i_frames.Play(anim_selectionner, 0, 0);
     }
 }

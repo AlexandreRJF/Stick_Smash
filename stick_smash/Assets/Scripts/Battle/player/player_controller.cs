@@ -28,6 +28,7 @@ public class player_controller : MonoBehaviour
     public pv_manager Pv_Manager;
     public jump_manager Jump_Manager;
     public mana_i_frames Mana_i_Frames;
+    public bruitage_pv Bruitage_Pv;
 
 
     // Start is called before the first frame update
@@ -102,6 +103,7 @@ public class player_controller : MonoBehaviour
         if (i_frames == false) {
 
             degats_subit();
+            Bruitage_Pv.sound_effect_pv_perdu();
             Mana_i_Frames.main_i_frames();
         }
 
