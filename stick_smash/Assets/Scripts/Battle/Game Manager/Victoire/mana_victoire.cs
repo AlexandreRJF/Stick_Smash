@@ -12,6 +12,8 @@ public class mana_victoire : MonoBehaviour
     [SerializeField] private bouton_ecran_titre Bouton_Ecran_Titre;
     [SerializeField] private bouton_quitter Bouton_Quitter;
 
+    [SerializeField] private AudioSource audio_source_you_win;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class mana_victoire : MonoBehaviour
     public void gestion_victoire() {
 
         affichage_victoire();
+        play_you_win();
     }
 
 
@@ -60,5 +63,11 @@ public class mana_victoire : MonoBehaviour
     public void affichage_bouton_quitter(bool on_off) {
 
         Bouton_Quitter.gestion_bouton(on_off);
+    }
+
+
+    // Permet de jouer le bruitage you win
+    void play_you_win() {
+        audio_source_you_win.Play(0);
     }
 }

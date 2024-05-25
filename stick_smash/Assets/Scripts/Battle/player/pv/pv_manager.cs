@@ -41,7 +41,7 @@ public class pv_manager : MonoBehaviour
 
 
     // Permet de masquer tout les coeurs
-    void masquer_all_coeurs() {
+    public void masquer_all_coeurs() {
     
         foreach(GameObject gameObject in liste_go_coeur) {
 

@@ -49,6 +49,10 @@ public class jump_manager : MonoBehaviour
         
         is_on_ground = true;
         set_nombre_sauts();
+
+        if (hit_box.gameObject.tag == "kill zone") {
+            Player_Controller.mort();
+        }
     }
 
 

@@ -94,6 +94,7 @@ public class player_controller : MonoBehaviour
     public void player_attack() {
 
         Fist_Manager.attaque();
+        Fist_Manager.bruitage_coup_inflige();
     }
 
 
@@ -104,6 +105,7 @@ public class player_controller : MonoBehaviour
 
             degats_subit();
             Bruitage_Pv.sound_effect_pv_perdu();
+            Bruitage_Pv.sound_effect_coup_subit();
             Mana_i_Frames.main_i_frames();
         }
 
@@ -123,9 +125,10 @@ public class player_controller : MonoBehaviour
 
 
     // Permet de tuer le personnage
-    void mort() {
+    public void mort() {
 
         Game_Manager.call_main_victoire();
+        Pv_Manager.masquer_all_coeurs();
         Destroy(gameObject);
     }
 }

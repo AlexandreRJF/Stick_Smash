@@ -10,6 +10,8 @@ public class fist_manager : MonoBehaviour
     public bool attack_on;
     bool end_lag;
 
+    [SerializeField] private AudioSource audio_source_coup_poing;
+
     // Start is called before the first frame update
     void Start() {
         
@@ -43,5 +45,11 @@ public class fist_manager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         go_poing_sorti.SetActive(false);
         end_lag = false;
+    }
+
+
+    // Permet de play le bruitage coup lancé
+    public void bruitage_coup_inflige() {
+        audio_source_coup_poing.Play(0);
     }
 }
